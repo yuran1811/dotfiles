@@ -114,6 +114,8 @@ alias gpl="git pull"
 alias gco="git checkout"
 alias gcb="git checkout -b"
 alias glo="git log --oneline --graph --decorate"
+alias gsm="git submodule"
+alias gsmpl="gsm foreach git pull origin master"
 
 alias ns="npm start"
 alias nt="npm test"
