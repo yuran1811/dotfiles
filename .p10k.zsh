@@ -17,7 +17,7 @@
 
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # ============[ Line #1 ]============
-    os_icon
+    # os_icon
     dir
     vcs
     # ============[ Line #2 ]============
@@ -42,14 +42,14 @@
     nodenv                  # node.js version from nodenv (https://github.com/nodenv/nodenv)
     nvm                     # node.js version from nvm (https://github.com/nvm-sh/nvm)
     nodeenv                 # node.js environment (https://github.com/ekalinin/nodeenv)
-    node_version          # node.js version
+    # node_version          # node.js version
     # go_version            # go version (https://golang.org)
     rust_version          # rustc version (https://www.rust-lang.org)
     # dotnet_version        # .NET version (https://dotnet.microsoft.com)
     # php_version           # php version (https://www.php.net/)
     # laravel_version       # laravel php framework version (https://laravel.com/)
     # java_version          # java version (https://www.java.com/)
-    package               # name@version from package.json (https://docs.npmjs.com/files/package.json)
+    # package               # name@version from package.json (https://docs.npmjs.com/files/package.json)
     rbenv                   # ruby version from rbenv (https://github.com/rbenv/rbenv)
     rvm                     # ruby version from rvm (https://rvm.io)
     fvm                     # flutter version management (https://github.com/leoafarias/fvm)
@@ -113,7 +113,7 @@
   #   POWERLEVEL9K_STATUS_ICON_BEFORE_CONTENT=false
   # Or for a specific segment in specific state:
   #   POWERLEVEL9K_DIR_NOT_WRITABLE_ICON_BEFORE_CONTENT=false
-  typeset -g POWERLEVEL9K_ICON_BEFORE_CONTENT=
+  # typeset -g POWERLEVEL9K_ICON_BEFORE_CONTENT=
 
   # Add an empty line before each prompt.
   typeset -g POWERLEVEL9K_PROMPT_ADD_NEWLINE=false
@@ -154,7 +154,7 @@
   # Separator between different-color segments on the right.
   typeset -g POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR='\uE0B2'
   # To remove a separator between two segments, add "_joined" to the second segment name.
-  # For example: POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(os_icon context_joined)
+  # typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(os_icon context_joined)
 
   # The right end of left prompt.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_LAST_SEGMENT_END_SYMBOL='\uE0B0'
@@ -171,7 +171,7 @@
   # OS identifier color.
   typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=232
   typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=7
-  # typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION=''
+  # typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION=$'\uebca'
 
   ################################[ prompt_char: prompt symbol ]################################
   # Transparent background.
@@ -493,21 +493,21 @@
   # Status on success. No content, just an icon. No need to show it if prompt_char is enabled as
   # it will signify success by turning green.
   typeset -g POWERLEVEL9K_STATUS_OK=true
-  typeset -g POWERLEVEL9K_STATUS_OK_VISUAL_IDENTIFIER_EXPANSION='✔'
+  typeset -g POWERLEVEL9K_STATUS_OK_VISUAL_IDENTIFIER_EXPANSION=$'\uf42e'
   typeset -g POWERLEVEL9K_STATUS_OK_FOREGROUND=2
   typeset -g POWERLEVEL9K_STATUS_OK_BACKGROUND=0
 
   # Status when some part of a pipe command fails but the overall exit status is zero. It may look
   # like this: 1|0.
   typeset -g POWERLEVEL9K_STATUS_OK_PIPE=true
-  typeset -g POWERLEVEL9K_STATUS_OK_PIPE_VISUAL_IDENTIFIER_EXPANSION='✔'
+  typeset -g POWERLEVEL9K_STATUS_OK_PIPE_VISUAL_IDENTIFIER_EXPANSION=$'\uf42e'
   typeset -g POWERLEVEL9K_STATUS_OK_PIPE_FOREGROUND=2
   typeset -g POWERLEVEL9K_STATUS_OK_PIPE_BACKGROUND=0
 
   # Status when it's just an error code (e.g., '1'). No need to show it if prompt_char is enabled as
   # it will signify error by turning red.
   typeset -g POWERLEVEL9K_STATUS_ERROR=true
-  typeset -g POWERLEVEL9K_STATUS_ERROR_VISUAL_IDENTIFIER_EXPANSION='✘'
+  typeset -g POWERLEVEL9K_STATUS_ERROR_VISUAL_IDENTIFIER_EXPANSION=$'\uf467'
   typeset -g POWERLEVEL9K_STATUS_ERROR_FOREGROUND=3
   typeset -g POWERLEVEL9K_STATUS_ERROR_BACKGROUND=1
 
@@ -515,14 +515,14 @@
   typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL=true
   # Use terse signal names: "INT" instead of "SIGINT(2)".
   typeset -g POWERLEVEL9K_STATUS_VERBOSE_SIGNAME=false
-  typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_VISUAL_IDENTIFIER_EXPANSION='✘'
+  typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_VISUAL_IDENTIFIER_EXPANSION=$'\uf467'
   typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_FOREGROUND=3
   typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_BACKGROUND=1
 
   # Status when some part of a pipe command fails and the overall exit status is also non-zero.
   # It may look like this: 1|0.
   typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE=true
-  typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_VISUAL_IDENTIFIER_EXPANSION='✘'
+  typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_VISUAL_IDENTIFIER_EXPANSION=$'\uf467'
   typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_FOREGROUND=3
   typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_BACKGROUND=1
 
@@ -548,7 +548,7 @@
   # Don't show the number of background jobs.
   typeset -g POWERLEVEL9K_BACKGROUND_JOBS_VERBOSE=false
   # Custom icon.
-  typeset -g POWERLEVEL9K_BACKGROUND_JOBS_VISUAL_IDENTIFIER_EXPANSION='≡'
+  typeset -g POWERLEVEL9K_BACKGROUND_JOBS_VISUAL_IDENTIFIER_EXPANSION=$'\uf51e'
 
   #######################[ direnv: direnv status (https://direnv.net/) ]########################
   # Direnv color.
@@ -640,13 +640,13 @@
   # Node.js version from asdf.
   typeset -g POWERLEVEL9K_ASDF_NODEJS_FOREGROUND=0
   typeset -g POWERLEVEL9K_ASDF_NODEJS_BACKGROUND=2
-  # typeset -g POWERLEVEL9K_ASDF_NODEJS_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  # typeset -g POWERLEVEL9K_ASDF_NODEJS_VISUAL_IDENTIFIER_EXPANSION=$'\ue719'
   # typeset -g POWERLEVEL9K_ASDF_NODEJS_SHOW_ON_UPGLOB='*.foo|*.bar'
 
   # Rust version from asdf.
   typeset -g POWERLEVEL9K_ASDF_RUST_FOREGROUND=0
   typeset -g POWERLEVEL9K_ASDF_RUST_BACKGROUND=208
-  # typeset -g POWERLEVEL9K_ASDF_RUST_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  # typeset -g POWERLEVEL9K_ASDF_RUST_VISUAL_IDENTIFIER_EXPANSION=$'\ue7a8'
   # typeset -g POWERLEVEL9K_ASDF_RUST_SHOW_ON_UPGLOB='*.foo|*.bar'
 
   # .NET Core version from asdf.
