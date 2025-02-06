@@ -2,11 +2,6 @@
   "path": "cz-git",
   "types": [
     {
-      "value": "extensive",
-      "name": "extensive: 💫 extensive changes",
-      "emoji": "💫"
-    },
-    {
       "value": "feat",
       "name": "feat: ✨ A new feature",
       "emoji": "✨"
@@ -65,11 +60,6 @@
       "value": "revert",
       "name": "revert: 🔃 Reverts a previous commit",
       "emoji": "🔃"
-    },
-    {
-      "value": "mission_completed",
-      "name": "mission_completed: 🎯 Completes a mission",
-      "emoji": "🎯"
     }
   ],
   "messages": {
@@ -90,7 +80,7 @@
     "feat"
   ],
   "alias": {
-    "fd": "docs: 📖 fix typos"
+    "typo": "docs: 📖 fix typos"
   },
   "allowCustomIssuePrefix": true,
   "allowCustomScopes": true,

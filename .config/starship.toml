@@ -1,0 +1,179 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](#C6A0F6)$username[](bg:#EE99A0 fg:#C6A0F6)\
+$directory[](bg:#EED49F fg:#EE99A0)\
+$git_branch$git_status[](bg:#92c8e0 fg:#EED49F)\
+$c\
+$elixir\
+$elm\
+$golang\
+$gradle\
+$haskell\
+$java\
+$julia\
+$kotlin\
+$nim\
+$nodejs\
+$python\
+$rust\
+$scala\
+[](bg:#a4e6f1 fg:#92c8e0)\
+$docker_context[](bg:#33658A fg:#a4e6f1)\
+$time[](bg:#8AADF4 fg:#33658A)\
+$battery[](fg:#8AADF4)\
+$cmd_duration\
+$line_break\
+$character"""
+
+add_newline = false
+
+[username]
+disabled = false
+show_always = true
+style_user = "bg:#C6A0F6 fg:#5E28A2 bold"
+style_root = "bg:#C6A0F6 fg:#5E28A2 bold"
+format = '[$user ]($style)'
+aliases = { "trieu" = "yuran" }
+
+[character]
+success_symbol = '[🌽](bold green)'
+error_symbol = '[➜](bold red)'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:#33658A fg:#CAE8FF"
+format = '[ $time ]($style)'
+
+[battery]
+disabled = false
+format = '[  $percentage]($style)'
+
+[[battery.display]]
+threshold = 100
+style = "bg:#8AADF4 fg:#203e7c"
+
+[cmd_duration]
+format = '  [$duration]($style) '
+
+[directory]
+style = "bg:#EE99A0 fg:#B82F43"
+format = "[ $path ]($style)"
+use_os_path_sep = false
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+style = "bg:#EED49F fg:#916916"
+format = '[ $symbol$branch ]($style)'
+
+[git_status]
+style = "bg:#EED49F fg:#916916"
+format = '[$all_status$ahead_behind ]($style)'
+
+[os]
+disabled = false
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+EndeavourOS = ""
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+Pop = ""
+
+[docker_context]
+symbol = " "
+style = "bg:#a4e6f1 fg:#207483"
+format = '[ $symbol $context ]($style)'
+
+[c]
+symbol = " "
+style = "bg:#92c8e0 fg:#155f6b"
+format = '[ $symbol ($version) ]($style)'
+
+[elixir]
+symbol = " "
+style = "bg:#92c8e0 fg:#155f6b"
+format = '[ $symbol ($version) ]($style)'
+
+[elm]
+symbol = " "
+style = "bg:#92c8e0 fg:#155f6b"
+format = '[ $symbol ($version) ]($style)'
+
+[golang]
+symbol = " "
+style = "bg:#92c8e0 fg:#155f6b"
+format = '[ $symbol ($version) ]($style)'
+
+[gradle]
+style = "bg:#92c8e0 fg:#155f6b"
+format = '[ $symbol ($version) ]($style)'
+
+[haskell]
+symbol = " "
+style = "bg:#92c8e0 fg:#155f6b"
+format = '[ $symbol ($version) ]($style)'
+
+[java]
+symbol = " "
+style = "bg:#92c8e0 fg:#155f6b"
+format = '[ $symbol ($version) ]($style)'
+
+[julia]
+symbol = " "
+style = "bg:#92c8e0 fg:#155f6b"
+format = '[ $symbol ($version) ]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#92c8e0 fg:#155f6b"
+format = '[ $symbol ($version) ]($style)'
+
+[nim]
+symbol = "󰆥 "
+style = "bg:#92c8e0 fg:#155f6b"
+format = '[ $symbol ($version) ]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#92c8e0 fg:#155f6b"
+format = '[ $symbol ($version) ]($style)'
+
+[scala]
+symbol = " "
+style = "bg:#92c8e0 fg:#155f6b"
+format = '[ $symbol ($version) ]($style)'
+
+[python]
+symbol = ""
+style = "bg:#92c8e0 fg:#155f6b"
+format = '[ $symbol ($version) ]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:#92c8e0 fg:#155f6b"
+format = '[ $symbol ($version) ]($style)'
