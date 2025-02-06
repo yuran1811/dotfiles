@@ -1,5 +1,4 @@
 <h1 align="center">dotfiles</h1>
-<p align="center" style="font-size:16px"><strong>yuran1811 dotfiles</strong></p>
 <p align="center">  
   <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="400" />
 </p>
@@ -11,8 +10,6 @@
   <img alt="Commits" src="https://badgen.net/github/commits/yuran1811/dotfiles">
   <img alt="Code Size" src="https://img.shields.io/github/languages/code-size/yuran1811/dotfiles">
 </p>
-
-<div align="center"><a href="" target="_blank">Live Demo</a></div>
 
 ## Introduction
 
