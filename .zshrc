@@ -6,9 +6,21 @@
 
 ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_AUTOSUGGEST_STRATEGY=(completion)
 
+plugins=(
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+)
+
+# Disable automatic updates for oh-my-zsh
 DISABLE_UPDATE_PROMPT=true
 zstyle ':omz:update' mode disabled
+
+# Configure completion behavior
+zstyle ':completion:*' menu select
+zstyle ':completion:*' file-list all
+zstyle ':completion:*:*:-command-:*:*' group-order alias builtins functions commands
 
 fe() {
   emulate -L zsh
@@ -71,9 +83,7 @@ CODEFORCES_BUILD_FLAGS="-Wall -Wextra -Wshadow -Wconversion -Wfloat-equal -Wdupl
 cfcpp() { g++ $CODEFORCES_BUILD_FLAGS $1.cpp -o $1 && ./$1 && rm ./$1.exe }
 cc() { g++ $1.cc -o $1 && ./$1 && rm ./$1.exe }
 cpp() { g++ $1.cpp -o $1 && ./$1 && rm ./$1.exe }
-asmwin() { nasm -f win64 $1.asm && gcc $1.obj && ./a.exe }
-asmlinux() { nasm -f elf64 $1.asm && ld $1.o && ./a.out }
-javc() { $JDK_HOME/javac $1.java && $JDK_HOME/java $1 }
+arm64() { aarch64-linux-gnu-gcc $1.s -o $1.elf -lc -static && qemu-aarch64 $1.elf && rm -f *.elf }
 
 alias gg="web gg"
 alias ggs="web gg"
@@ -122,19 +132,31 @@ alias yd="yarn dev"
 alias yr="yarn run"
 alias yup="yarn upgrade-interactive"
 
-alias cls="clear"
+alias dk="docker"
+alias dkimg="docker image"
+alias dkcon="docker container"
+
+alias ils="eza --git --icons"
+alias illa="ils -ABhl -F always -s name --group-directories-first"
+alias illar="illa -TL"
 alias lla="ls -ABhlpX"
+
+alias nv="nvim"
+alias cls="clear"
+alias cat="batcat --theme=gruvbox-dark"
 alias grep="grep -P -i --color=auto"
 alias port="netstat -tpn | grep"
 alias timecheck="time && zsh -i -c exit"
 alias vitenew="npx create-vite@latest"
 
-export PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
+export PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/opt/nvim-linux64/bin"
 
 export ZSH
 
+export EDITOR=/usr/bin/nvim
+
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Load oh-my-zsh
